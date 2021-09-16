@@ -1,28 +1,112 @@
+.mr-1{
+    margin-right: 10px;
+}
 .__pc{
-    background-color: transparent !important;
+    background-color:#3b020d;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     .__pokedex{
-        width: 25vw;
-        height: 60vh;
+        width: 350px;
+        height: 450px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items:flex-end;
-        transition: all 0.3s linear;
+        transition:ease-in-out 0.3s;
         &:hover {
             transform: scale(1.01);
         }
     }
 
     .__pc-1{
-        background-color: #dd082f;
         width: 85%;
         height: 100%;
         border-radius: 10px 0px 0px 10px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #dd082f !important;
+        .ca{
+            width: 100%;
+            height: 15%;
+            background-color:transparent !important;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            .ca-c{
+                width: 90%;
+                height: 80%;
+                display:flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content:flex-start;
+
+                .circle{
+                    border-radius: 50%;
+                    border: 1px solid black;
+                    box-shadow: 1px 1px 1px 0px rgb(255, 255, 255);
+                }
+                .c-1{
+                    width:50px;
+                    height:50px;
+                    background-color:#01fbfb !important;
+                }
+                .c-2{
+                    width:20px;
+                    height:20px;
+                    background-color:#dd082f !important;
+                }
+                .c-3{
+                    width:20px;
+                    height:20px;
+                    background-color:#ffcc02 !important;
+                }
+                .c-4{
+                    width:20px;
+                    height:20px;
+                    background-color:#2ff901 !important;
+                }
+            }
+        }
+        .cb{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .sc-1{
+                width: 90%;
+                height: 90%;
+                background-color: #b0b0b0;
+                border-radius: 10px 10px 0px 0px;
+                overflow: hidden;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .sc-2{
+                    width: 90%;
+                    height: 90%;
+                    background-color: white;
+                    border-radius:5px;
+                    overflow: hidden;
+                    border: 1px solid black;
+                }
+            }
+        }
+        .cc{
+            width: 100%;
+            height: 15%;
+            background-color:transparent !important;
+        }
+        .cd{
+            width: 100%;
+            height: 20%;
+            background-color:transparent !important;
+        }
     }
 
     .__pc-2{
