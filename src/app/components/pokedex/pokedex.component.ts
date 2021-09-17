@@ -9,6 +9,7 @@ import { PokeapiService } from 'src/app/services/pokeapi.service';
 export class PokedexComponent implements OnInit {
 
   public pokename:String;
+  public pokemon: any = null;
 
   constructor(
     private _pokeapi: PokeapiService
@@ -23,9 +24,10 @@ export class PokedexComponent implements OnInit {
     if(pokeForm.valid){
       this._pokeapi.getPokemon(this.pokename).subscribe(
         response => {
-          console.log(response)
+          this.pokemon = response;
         },
         error => {
+          this.pokemon = null;
           console.log(error)
         }
       )

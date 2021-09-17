@@ -19,9 +19,13 @@
             </div>
             <div class="cb">
                 <div class="sc-1">
-                    <div class="sc-2">
-                        <!-- <img src="assets/noise.gif" alt=""> -->
-                        <app-poke></app-poke>
+                    <div class="sc-2" *ngIf="pokemon">
+                        <app-poke
+                            [pokemon]='pokemon'
+                        ></app-poke>
+                    </div>
+                    <div class="sc-2" *ngIf="!pokemon">
+                        <img src="assets/noise.gif" alt="">
                     </div>
                 </div>
             </div>
