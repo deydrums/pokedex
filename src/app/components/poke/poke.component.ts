@@ -12,7 +12,6 @@ export class PokeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.pokemon)
   }
 
 }

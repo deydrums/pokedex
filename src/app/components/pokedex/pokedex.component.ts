@@ -1,6 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PokeapiService } from 'src/app/services/pokeapi.service';
-
 @Component({
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
@@ -14,7 +14,8 @@ export class PokedexComponent implements OnInit {
   public msg:String;
 
   constructor(
-    private _pokeapi: PokeapiService
+    private _pokeapi: PokeapiService,
+    private _location: Location
   ) {
     this.pokename = '';
     this.loader = false;
@@ -22,23 +23,33 @@ export class PokedexComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    const q = this._location.path().toLowerCase().split('?q=')[1];
+    if(q){
+      this.pokename = q;
+      this.search(this.pokename);
+    }
   }
 
   searchPoke(pokeForm:any){
     if(pokeForm.valid){
-      this.loader = true;
-      this.pokemon = null;
-      this._pokeapi.getPokemon(this.pokename.toLowerCase()).subscribe(
-        response => {
-          this.pokemon = response;
-          this.loader = false;
-        },
-        error => {
-          this.pokemon = null;
-          this.loader = false;
-          this.msg = error.error;
-        }
-      )
+      this.search(this.pokename);
     }
+  }
+
+  search(pokename:any) {
+    this._location.replaceState('',`?q=${pokename.toLowerCase()}`);
+    this.loader = true;
+    this.pokemon = null;
+    this._pokeapi.getPokemon(pokename.toLowerCase()).subscribe(
+      response => {
+        this.pokemon = response;
+        this.loader = false;
+      },
+      error => {
+        this.pokemon = null;
+        this.loader = false;
+        this.msg = error.error;
+      }
+    )
   }
 }
