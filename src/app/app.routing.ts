@@ -5,10 +5,8 @@ import { PokedexComponent } from './components/pokedex/pokedex.component';
 
 
 const appRoute: Routes = [
-    {path: '', redirectTo: 'pokedex', pathMatch: 'full'},
-    {path: 'pokedex', component: PokedexComponent},
-    {path: 'poke', component: PokeComponent},
-
+    {path: '', component: PokedexComponent},
+    {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
 
 export const appRoutingProviders: any[] =[];
