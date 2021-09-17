@@ -39,8 +39,8 @@
                 </div>
             </div>
             <div class="cd">
-                <form action="" class="cd-c">
-                    <input type="text" class="in-s" name="name" placeholder="Ingresa un nombre..."/>
+                <form class="cd-c" #pokeForm="ngForm" (ngSubmit)="searchPoke(pokeForm)">
+                    <input type="text" class="in-s" name="pokename" [(ngModel)]="pokename"  placeholder="Ingresa un nombre..." required/>
                     <button type="submit" class="circle btn-s"></button>
                 </form>
             </div>

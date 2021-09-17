@@ -17,7 +17,7 @@ export class PokeapiService {
 
    getPokemon(pokemon:any):Observable<any>{
     let headers = new HttpHeaders({'Content-Type':'application/json'});
-    return this._http.get(this.url+'client/getClientsFilterAdmin/'+pokemon,{headers:headers});
+    return this._http.get(this.url+pokemon,{headers:headers});
   }
 
 }
