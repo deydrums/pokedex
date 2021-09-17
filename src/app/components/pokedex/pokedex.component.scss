@@ -106,6 +106,15 @@ input:-webkit-autofill:active {
                     border-radius:5px;
                     overflow: hidden;
                     border: 1px solid black;
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                    .err{
+                        position: absolute;
+                        transform: translate(50%, -350%);
+                    }
                 }
             }
         }

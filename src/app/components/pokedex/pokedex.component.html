@@ -24,8 +24,12 @@
                             [pokemon]='pokemon'
                         ></app-poke>
                     </div>
-                    <div class="sc-2" *ngIf="!pokemon">
+                    <div class="sc-2" *ngIf="!pokemon && loader">
+                        <img src="assets/loader.gif" alt="">
+                    </div>
+                    <div class="sc-2" *ngIf="!pokemon && !loader">
                         <img src="assets/noise.gif" alt="">
+                        <h1 class="err">{{msg}}</h1>
                     </div>
                 </div>
             </div>

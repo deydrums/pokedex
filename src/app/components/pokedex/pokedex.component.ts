@@ -10,11 +10,15 @@ export class PokedexComponent implements OnInit {
 
   public pokename:String;
   public pokemon: any = null;
+  public loader: boolean;
+  public msg:String;
 
   constructor(
     private _pokeapi: PokeapiService
   ) {
     this.pokename = '';
+    this.loader = false;
+    this.msg = '';
    }
 
   ngOnInit(): void {
@@ -22,13 +26,17 @@ export class PokedexComponent implements OnInit {
 
   searchPoke(pokeForm:any){
     if(pokeForm.valid){
+      this.loader = true;
+      this.pokemon = null;
       this._pokeapi.getPokemon(this.pokename.toLowerCase()).subscribe(
         response => {
           this.pokemon = response;
+          this.loader = false;
         },
         error => {
           this.pokemon = null;
-          console.log(error)
+          this.loader = false;
+          this.msg = error.error;
         }
       )
     }
