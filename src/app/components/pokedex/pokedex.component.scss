@@ -20,7 +20,7 @@ input:-webkit-autofill:active {
 .__pc{
     background-color:#3b020d;
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,4 +203,24 @@ input:-webkit-autofill:active {
         width: 7%;
         height: 90%;
     }
+}
+
+
+.pf{
+    background-color:#3b020d;
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .powered-by{
+        color: rgba(255, 255, 255, 0.534);
+        text-decoration: none;
+        font-size: 20px;
+        font-style: oblique;
+        transition: all 0.3s;
+        &:hover{
+            color: rgb(255, 255, 255);
+        }
+    }    
 }
