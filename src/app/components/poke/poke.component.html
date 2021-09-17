@@ -8,23 +8,8 @@
         </div>
         <div class="poke-data">
             <ul>
-                <li>
-                    <strong>HP:</strong> 35
-                </li>
-                <li>
-                    <strong>Ata:</strong> 55
-                </li>
-                <li>
-                    <strong>Def:</strong> 40
-                </li>
-                <li>
-                    <strong>Ata especial:</strong> 50
-                </li>
-                <li>
-                    <strong>Def especial:</strong> 50
-                </li>
-                <li>
-                    <strong>Vel:</strong> 90
+                <li *ngFor="let item of pokemon.stats;">
+                    <strong>{{item.stat.name}} :</strong> {{item.base_stat}}
                 </li>
             </ul>
         </div>

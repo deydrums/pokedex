@@ -22,7 +22,7 @@ export class PokedexComponent implements OnInit {
 
   searchPoke(pokeForm:any){
     if(pokeForm.valid){
-      this._pokeapi.getPokemon(this.pokename).subscribe(
+      this._pokeapi.getPokemon(this.pokename.toLowerCase()).subscribe(
         response => {
           this.pokemon = response;
         },
