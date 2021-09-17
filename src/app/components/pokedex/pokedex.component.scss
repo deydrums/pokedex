@@ -1,3 +1,12 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+
 .mr-1{
     margin-right: 10px;
 }
@@ -140,6 +149,43 @@
             width: 100%;
             height: 20%;
             background-color:transparent !important;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            .cd-c{
+                width: 90%;
+                height: 80%;
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content:space-around;
+                .in-s{
+                    background-color:#ffcc02 !important;
+                    border-radius: 10px;
+                    border: 1px solid black;
+                    width: 80%;
+                    height: 40px;
+                    color:black !important;
+                    font-size: 23px;
+                    font-weight: 300;
+                    &::placeholder{
+                        color: rgb(100, 100, 100);
+                        font-weight: 100 !important;
+                    }
+                    &:focus{
+                        outline:none;
+                    }
+                }
+                .btn-s{
+                    width: 40px;
+                    height: 40px;
+                    background-color: #ee5858;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #e79c9c;
+                    }
+                }
+            }
         }
     }
 
